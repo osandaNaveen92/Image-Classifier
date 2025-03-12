@@ -13,3 +13,10 @@ for i in os.listdir(testpath):# entering to the test folder
       resize_image=cv2.resize(image,(new_size,new_size))
       test_images.append(list(resize_image))
       test_labels.append(class_cancer[i])
+
+def list_to_array_test(test_images,test_labels):
+  return np.array(test_images),np.array(test_labels)
+
+X_test,y_test=list_to_array_test(test_images,test_labels)
+print(X_test.shape)
+print(y_test.shape)
